@@ -1,0 +1,40 @@
+
+<!-- Listes des différents boutons, au clic de chaque bouton, on appelle la fonction showForm qui se trouve dans "Home.component.ts"-->
+<div class="container">
+  <ul class="buttons-list">
+    <li>
+      <button (click)="showForm()">
+        <img src="../../assets/images/star.jpg" alt="image-button">
+      </button>
+    </li>
+    <li>
+      <button (click)="showForm()"></button>
+    </li>
+    <li>
+      <button (click)="showForm()"></button>
+    </li>
+    <li>
+      <button (click)="showForm()">
+        <img src="../../assets/images/cash.jpg" alt="image-button">
+      </button>
+    </li>
+  </ul>
+</div>
+
+<!-- Ici, si isFormShowed est TRUE, on affiche le formulaire sinon, on ne l'affiche pas -->
+<div *ngIf="isFormShowed" class="form-container">
+  <div>
+    <img src="../../assets/images/tibby-call.svg" alt="logo-form">
+    <button (click)="showForm()"><fa-icon [icon]="closeIcon"></fa-icon></button>
+  </div>
+  <form (submit)="submit(person.firstName, person.email)" #home>
+    <h2>Formulaire de contact</h2>
+    <label for="name">Prénom :</label>
+    <input type="text" name="firstName" [(ngModel)]="person.firstName" required />
+    <label for="email">Email :</label>
+    <input type="email" name="’email" [(ngModel)]="person.email" required />
+    <button type="submit">Envoyer</button>
+    <!-- Une fois les champs remplis, au clic sur envoyer, on attribue les valeurs des input aux proriétés "firstName" et "email" de l'objet "person" du composant "Home.component.ts"
+         et on console.log les valeurs  -->
+  </form>
+</div>

@@ -1,0 +1,12 @@
+@font-face {
+  font-family: RammettoOne-regular;
+  src: url("./assets/polices/RammettoOne-Regular.ttf");
+}
+
+body{
+  font-family: RammettoOne-regular;
+  /* height: 100vh; */
+  margin: 0;
+  background: linear-gradient(#21A393,  #0A073F);
+  /* background-repeat: no-repeat; */
+}
